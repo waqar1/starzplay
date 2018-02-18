@@ -13,7 +13,7 @@ const MetaComponent = ({ movieDetails }) => {
           <span>{parseFloat(movieDetails.popularity).toFixed(2)}</span>&nbsp;|&nbsp; 
           <span>{movieDetails.runtime} minutes</span>
         </div>
-        <p>{movieDetails.overview}</p>
+        <p className="meta-description">{movieDetails.overview}</p>
       </div>
     </div>
   );
