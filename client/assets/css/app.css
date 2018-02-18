@@ -31,8 +31,9 @@ video {
   width: 100%;
 }
 .language-selector {
+  position: absolute;
   z-index: 1000;
-  float: right;
+  right: 0;
   color: white;
   padding: 10px;
 }
