@@ -7,6 +7,7 @@ import MetaComponent from './MetaComponent';
 import PlayerComponent from '../player/PlayerComponent.jsx';
 import { Config } from '../../utils/Constants';
 import { getMovieDetails } from '../../utils/Api';
+import { isSafariBrowser, playVideo, playNativeSafari } from '../../utils/Misc';
 import '../../assets/js/dash.all.min.js';
 
 
@@ -34,11 +35,11 @@ export default class DetailsComponent extends React.Component {
   }
 
   playVideo() {
-    var url = "http://media.axprod.net/dash/ED_TTML_NEW/Clear/Manifest_sub_in.mpd";
-    var player = dashjs.MediaPlayer().create();
-    player.initialize(document.querySelector("#videoPlayer"), url, true);
-    var ttmlDiv = document.querySelector("#video-caption");
-    player.attachTTMLRenderingDiv(ttmlDiv);
+    if (isSafariBrowser()) {
+      playNativeSafari('https://bitmovin-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8');
+    } else {
+      playVideo("http://media.axprod.net/dash/ED_TTML_NEW/Clear/Manifest_sub_in.mpd");
+    }
   }
 
   render() {
