@@ -19,8 +19,7 @@ export default class DetailsComponent extends React.Component {
   }
 
   componentDidMount() {
-    const movieId = '9761-elephants-dream';
-    getMovieDetails(movieId)
+    getMovieDetails(this.props.movieId)
       .then((response) => {
         return response.json();
       })
@@ -35,7 +34,6 @@ export default class DetailsComponent extends React.Component {
   }
 
   playVideo() {
-    console.log('play');
     var url = "http://media.axprod.net/dash/ED_TTML_NEW/Clear/Manifest_sub_in.mpd";
     var player = dashjs.MediaPlayer().create();
     player.initialize(document.querySelector("#videoPlayer"), url, true);

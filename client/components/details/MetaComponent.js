@@ -2,7 +2,6 @@
     ./client/components/details/MetaComponent.jsx
 */
 import React from 'react';
-//import '../app.css';
 
 const MetaComponent = ({ movieDetails }) => {
   return (

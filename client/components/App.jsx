@@ -8,7 +8,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <DetailsComponent />
+        <DetailsComponent movieId="9761-elephants-dream" />
       </div>
     );
   }

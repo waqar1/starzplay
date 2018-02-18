@@ -10,7 +10,7 @@ export default class PlayerComponent extends React.Component {
       <div className="dash-video-player">
         <div className="video-container">
           <video id="videoPlayer" controls></video>
-          <div id="video-caption" style={{top:'100%'}}></div>
+          <div id="video-caption"></div>
         </div>
       </div>
     );
