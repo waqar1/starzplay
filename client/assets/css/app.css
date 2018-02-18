@@ -60,6 +60,7 @@ video {
   position: relative;
 }
 .meta-details .meta-details-inner {
+  width: 100%;
   padding: 30px;
   position: absolute;
   bottom: 0;
