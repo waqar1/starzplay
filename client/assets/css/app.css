@@ -21,13 +21,11 @@ video {
   z-index: -100;
   background: none;
 }
-
 :-ms-fullscreen {
   width: auto;
   height: auto;
   margin: auto;
 }
-
 #root, .container, .details-container {
   height: 100%;
   width: 100%;
@@ -83,6 +81,9 @@ video {
   background-color: transparent;
   position: relative;
   min-height: 1px;
+}
+.hide-player {
+  display: none;
 }
 .videoContainer {
   position: relative;

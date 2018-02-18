@@ -46,13 +46,17 @@ export default class DetailsComponent extends React.Component {
   }
 
   playVideo() {
+    const hlsStream = 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8';
+    const mpdStream = 'http://media.axprod.net/dash/ED_TTML_NEW/Clear/Manifest_sub_in.mpd';
+
     this.setState({
       renderPlayer: true
     });
+
     if (isSafariBrowser()) {
-      playNativeSafari('https://bitmovin-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8');
+      playNativeSafari(hlsStream);
     } else {
-      playVideo("http://media.axprod.net/dash/ED_TTML_NEW/Clear/Manifest_sub_in.mpd");
+      playVideo(mpdStream);
     }
   }
 
@@ -68,7 +72,7 @@ export default class DetailsComponent extends React.Component {
           <img src="client/assets/images/play.png" />
         </div>
         <MetaComponent movieDetails={this.state.movieDetails} />
-        { this.state.renderPlayer ? <PlayerComponent /> : null }
+        <PlayerComponent showPlayer={this.state.renderPlayer} />
       </div>
     );
   }
