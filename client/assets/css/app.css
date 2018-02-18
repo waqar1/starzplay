@@ -28,18 +28,35 @@ video {
   margin: auto;
 }
 
-#root, .container, .details-container, .backdrop-image, .play-button {
+#root, .container, .details-container {
   height: 100%;
   width: 100%;
 }
+.language-selector {
+  float: right;
+  color: white;
+  padding: 10px;
+}
+.selected-language {
+  font-weight: bold;
+  color: red;
+}
+.details-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .meta-details {
+  width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 30px;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,0.9)), to(rgba(0,0,0,0)));
   background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
   color: white;
+}
+.meta-details .meta-details-inner {
+  padding: 30px;
 }
 .play-button {
   position: absolute;
@@ -47,6 +64,11 @@ video {
   left:0;
   display: table;
   text-align: center;
+}
+.play-button {
+  margin-top: 100px;
+  width: 100px;
+  height: 100px;
 }
 .play-button img {
   margin-top: 100px;

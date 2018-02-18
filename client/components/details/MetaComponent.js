@@ -6,7 +6,7 @@ import React from 'react';
 const MetaComponent = ({ movieDetails }) => {
   return (
     <div className="meta-details">
-      <div>
+      <div className="meta-details-inner">
         <h1>{movieDetails.original_title}</h1>
         <div>
           <span>{movieDetails.release_date}</span>&nbsp;|&nbsp; 
