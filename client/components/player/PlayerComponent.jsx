@@ -4,15 +4,15 @@
 
 import React from 'react';
 
-export default class PlayerComponent extends React.Component {
-  render() {
-    return (
-      <div className={"dash-video-player" + (this.props.showPlayer ? '' : ' hide-player') }>
-        <div className="video-container">
-          <video id="videoPlayer" controls></video>
-          <div id="video-caption"></div>
-        </div>
+const PlayerComponent = ({ showPlayer }) => {
+  return (
+    <div className={"dash-video-player" + (showPlayer ? '' : ' hide-player') }>
+      <div className="video-container">
+        <video id="videoPlayer" controls></video>
+        <div id="video-caption"></div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default PlayerComponent;
