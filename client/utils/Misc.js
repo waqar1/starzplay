@@ -21,11 +21,16 @@ function playVideo(url) {
   player.initialize(document.querySelector("#videoPlayer"), url, true);
   var ttmlDiv = document.querySelector("#video-caption");
   player.attachTTMLRenderingDiv(ttmlDiv);
+  setTimeout(() => {
+    window.scroll(0,window.innerHeight);
+  }, 1000);
 }
 
 function playNativeSafari(url) {
   var video = document.querySelector("#videoPlayer");
   video.setAttribute("src", url);
   video.load();
+  setTimeout(() => {
+    window.scroll(0,window.innerHeight);
+  }, 1000);
 }
-

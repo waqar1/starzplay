@@ -61,15 +61,18 @@ export default class DetailsComponent extends React.Component {
   }
 
   render() {
-
     if(!this.state.movieDetails) {
-      return null;
+      return (
+        <div className="loader">
+          <img src="client/assets/images/loader.svg" alt="loading" />
+        </div>
+      );
     }
 
     return (
       <div className="details-container" style={{ backgroundImage: 'url(' + Config.imageBasePath + this.state.movieDetails.backdrop_path + ')'}}>
         <div className="play-button" onClick={this.playVideo.bind(this)}>
-          <img src="client/assets/images/play.png" />
+          <img src="client/assets/images/play.png" alt="play" />
         </div>
         <MetaComponent movieDetails={this.state.movieDetails} />
         <PlayerComponent showPlayer={this.state.renderPlayer} />
